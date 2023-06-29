@@ -25,9 +25,12 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
-email: scodeweb2016@gmail.com
 
+// Tài khoản user test
+email: viet@test.com
 pass: 1212123
+
+// Tài khoản admin
 
 -- admin
 viet@test.com
