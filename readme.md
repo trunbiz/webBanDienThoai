@@ -28,3 +28,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 email: scodeweb2016@gmail.com
 
 pass: 1212123
+
+-- admin
+viet@test.com
+123456

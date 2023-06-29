@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Admin_users;
+use App\Http\Requests\Request;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -90,5 +91,10 @@ class AuthController extends Controller
     public function email($token)
     {
         $this->notify(new ResetPasswordNotification($token));
-    } 
+    }
+
+    public function adminHome()
+    {
+        return view('back-end.home');
+    }
 }
