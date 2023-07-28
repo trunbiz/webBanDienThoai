@@ -1,4 +1,4 @@
-@extends('back-end.layouts.master')
+@extends('backEnd.layouts.master')
 
 @section('content')
 	<div class="table-responsive">

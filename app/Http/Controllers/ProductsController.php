@@ -21,11 +21,11 @@ class ProductsController extends Controller
         if ($id!='all') {
             $pro = Products::where('cat_id',$id)->paginate(10);
             $cat= Category::all();
-            return view('back-end.products.list',['data'=>$pro,'cat'=>$cat,'loai'=>$id]);                    
+            return view('backEnd.products.list',['data'=>$pro,'cat'=>$cat,'loai'=>$id]);
         } else {
             $pro = Products::paginate(10);
             $cat= Category::all();
-            return view('back-end.products.list',['data'=>$pro,'cat'=>$cat,'loai'=>0]);
+            return view('backEnd.products.list',['data'=>$pro,'cat'=>$cat,'loai'=>0]);
         }		
 	}
     public function getadd($id)
@@ -36,10 +36,10 @@ class ProductsController extends Controller
 		$cat= Category::where('parent_id',$p_id)->get();
 		$pro = Products::all();	
         if ($p_id >=19) {
-                return view('back-end.products.pc-add',['data'=>$pro,'cat'=>$cat,'loai'=>$p_name->name]);
+                return view('backEnd.products.pc-add',['data'=>$pro,'cat'=>$cat,'loai'=>$p_name->name]);
             }
         else {
-            return view('back-end.products.add',['data'=>$pro,'cat'=>$cat,'loai'=>$p_name->name]);
+            return view('backEnd.products.add',['data'=>$pro,'cat'=>$cat,'loai'=>$p_name->name]);
         }	
 		
 		
@@ -155,15 +155,15 @@ class ProductsController extends Controller
     	if ($p_id == 1) {
             $cat= Category::where('parent_id', '1')->get();
             $pro = Products::where('id',$id)->first();
-            return view('back-end.products.edit-mobile',['pro'=>$pro,'cat'=>$cat,'loai'=>'Điện thoại']);    
+            return view('backEnd.products.edit-mobile',['pro'=>$pro,'cat'=>$cat,'loai'=>'Điện thoại']);
         } elseif ($p_id ==2) {
             $cat= Category::where('parent_id', 2)->get();
             $pro = Products::where('id',$id)->first();
-            return view('back-end.products.edit-mobile',['pro'=>$pro,'cat'=>$cat,'loai'=>'Laptop']);       
+            return view('backEnd.products.edit-mobile',['pro'=>$pro,'cat'=>$cat,'loai'=>'Laptop']);
         } elseif ($p_id ==19) {
             $cat= Category::where('parent_id', 19)->get();
             $pro = Products::where('id',$id)->first();
-            return view('back-end.products.edit-mobile',['pro'=>$pro,'cat'=>$cat,'loai'=>$p_id]);     
+            return view('backEnd.products.edit-mobile',['pro'=>$pro,'cat'=>$cat,'loai'=>$p_id]);
         }
     }
     public function postedit($loai,$id,EditProductsRequest $rq)

@@ -38,4 +38,15 @@ class HomeController extends Controller
         $data = User::where('id',$id)->first();
         return view('member.edit',['data'=>$data]);
    }
+    public function editUser(Request $request)
+    {
+        $request = $request->all();
+        $user = User::find(Auth::user()->id);
+        $user->name = $request['name'] ?? null;
+        $user->email = $request['email'] ?? null;
+        $user->phone = $request['phone'] ?? null;
+        $user->address = $request['address'] ?? null;
+        $user->save();
+        return back();
+    }
 }

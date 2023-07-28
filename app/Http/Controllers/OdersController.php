@@ -14,7 +14,7 @@ class OdersController extends Controller
     public function getlist()
     {
     	$data = Oders::paginate(10);
-    	return view('back-end.oders.list',['data'=>$data]);
+    	return view('backEnd.oders.list',['data'=>$data]);
     }
 
     public function getdetail($id)
@@ -25,7 +25,7 @@ class OdersController extends Controller
     			 	->groupBy('oders_detail.id')
     			 	->where('o_id',$id)
     			 	->get();
-    	return view('back-end.oders.detail',['data'=>$data,'oder'=>$oder]);
+    	return view('backEnd.oders.detail',['data'=>$data,'oder'=>$oder]);
     }
     public function postdetail($id)
     {

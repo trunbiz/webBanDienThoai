@@ -13,12 +13,12 @@ class CategoryController extends Controller
    public function getlist()
    {
 		$data = Category::all();
-		return View ('back-end.category.cat-list',['data'=>$data]);
+		return View ('backEnd.category.cat-list',['data'=>$data]);
    }
    public function getadd()
    {	
 		$data = Category::all();
-		return View ('back-end.category.add',['data'=>$data]);
+		return View ('backEnd.category.add',['data'=>$data]);
    }
    public function postadd(AddCategoryRequest $rq)
    {
@@ -35,7 +35,7 @@ class CategoryController extends Controller
    public function getedit($id)   {
       $cat = Category::all();
       $data = Category::findOrFail($id)->toArray();
-      return View ('back-end.category.edit',['cat'=>$cat,'data'=>$data]);
+      return View ('backEnd.category.edit',['cat'=>$cat,'data'=>$data]);
    }
    public function postedit($id,AddCategoryRequest $request)
    {

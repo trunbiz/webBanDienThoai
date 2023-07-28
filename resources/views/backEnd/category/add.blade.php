@@ -1,4 +1,4 @@
-@extends('back-end.layouts.master')
+@extends('backEnd.layouts.master')
 @section('content')
 <!-- main content - noi dung chinh trong chu -->
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
@@ -39,16 +39,16 @@
 				      		<div class="form-group">
 					      		<label for="input-id">Danh mục cha</label>
 					      		<select name="sltCate" id="inputSltCate" class="form-control">
-					      			<option value="0">-ROOT --</option>
-					      			<?php MenuMulti($cat,0,$str='---| ',$data['parent_id']); ?>  		
+					      			<option value="0">- ROOT --</option>
+					      			<?php MenuMulti($data,0,$str='---| ',old('sltCate')); ?>   		
 					      		</select>
 				      		</div>
 				      		<div class="form-group">
 				      			<label for="input-id">Tên danh mục</label>
-				      			<input type="text" name="txtCateName" id="inputTxtCateName" class="form-control" value="{!! old('txtCateName', isset($data['name']) ? $data['name'] : null)!!}" required="required">
+				      			<input type="text" name="txtCateName" id="inputTxtCateName" class="form-control" value="" required="required">
 				      		</div>
 				      		<input type="submit" name="btnCateAdd" class="btn btn-primary" value="Thêm danh mục" class="button" />
-				      	</form>					      	
+				      	</form>			      	
 					</div>
 				</div>
 			</div>

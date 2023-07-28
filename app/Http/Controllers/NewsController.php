@@ -17,13 +17,13 @@ class NewsController extends Controller
     public function getlist()
     {
     	$data = News::paginate(10);
-    	return view('back-end.news.list',['data'=>$data]);
+    	return view('backEnd.news.list',['data'=>$data]);
     }
     public function getadd()
     {    	
 		$cat= Category::where('parent_id',13)->get();
 
-    	return view('back-end.news.add',['cat'=>$cat]);
+    	return view('backEnd.news.add',['cat'=>$cat]);
     }
     public function postadd(AddNewsRequest $rq)
     {
@@ -52,7 +52,7 @@ class NewsController extends Controller
     public function getedit($id)
     {	$cat= Category::where('parent_id',13)->get();
     	$n = News::where('id',$id)->first();
-    	return view('back-end.news.edit',['data'=>$n,'cat'=>$cat]);
+    	return view('backEnd.news.edit',['data'=>$n,'cat'=>$cat]);
     }
     public function postedit(EditNewsRequest $rq,$id)
     {

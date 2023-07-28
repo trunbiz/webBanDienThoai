@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Admin_users;
+use App\Http\Requests\Request;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -24,10 +25,10 @@ class AuthController extends Controller
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     protected $guard = 'admin';
-    protected $loginView = 'back-end.auth.login';
-    protected $registerView = 'back-end.auth.register';
-    protected $passwordView = 'back-end.auth.password.email';
-    protected $emailView = 'back-end.auth.login';
+    protected $loginView = 'backEnd.auth.login';
+    protected $registerView = 'backEnd.auth.register';
+    protected $passwordView = 'backEnd.auth.password.email';
+    protected $emailView = 'backEnd.auth.login';
     /**
      * Where to redirect users after login / registration.
      *
@@ -90,5 +91,10 @@ class AuthController extends Controller
     public function email($token)
     {
         $this->notify(new ResetPasswordNotification($token));
-    } 
+    }
+
+    public function adminHome()
+    {
+        return view('backEnd.home');
+    }
 }
